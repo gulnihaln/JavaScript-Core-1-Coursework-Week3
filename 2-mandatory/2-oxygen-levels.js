@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenLevels) {
+  const levelInNum = oxygenLevels.map(ratio => {
+    return ratio.includes('%') ? ratio.replace("%", "") : ratio ;
+  });
+  const firstPlanet = levelInNum.find(oxygenLevel => oxygenLevel > 19.50 && oxygenLevel < 23.50);
+  const index = levelInNum.indexOf(firstPlanet);
+  return index;
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
