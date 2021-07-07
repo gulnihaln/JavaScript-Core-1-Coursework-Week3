@@ -16,7 +16,8 @@
 */
 
 function getSettlers(allVoyagers) {
-  return allVoyagers.filter(people => people.startsWith("A").includes("family"));
+  return allVoyagers.filter(people => people.startsWith("A") && people.includes("family"));
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
