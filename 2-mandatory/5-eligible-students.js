@@ -9,7 +9,7 @@
 
 function getEligibleStudents(attendanceCounts) {
   const whoAttendedAtLeast8classes = attendanceCounts.filter(number => number[1] >= 8);
-  return whoAttendedAtLeast8classes.map(names => names.slice(1)).flat();
+  return whoAttendedAtLeast8classes.map(names => names.slice(0, 1)).flat();
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
