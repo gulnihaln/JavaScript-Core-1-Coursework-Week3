@@ -15,7 +15,7 @@ var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 //   }
 // }
 
-// pairsByIndex.some(isNull);
+// pairsByIndex.some(isNull); <----- I keep this initial solution for my own purpose to remember how I set shorter code
 
 pairsByIndex.some(element => { element === null ? process.exit(1) : true });
 
