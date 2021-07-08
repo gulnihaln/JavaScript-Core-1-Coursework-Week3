@@ -24,7 +24,16 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  const getNewPassword = passwords.map(element => {
+    return (containsLowercaseLetter(element) &&
+           containsUppercaseLetter(element) &&
+           containsNumber(element) &&
+           containsSymbol(element) &&
+           element.length >=5 );
+  });
+  return getNewPassword;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
