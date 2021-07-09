@@ -13,7 +13,8 @@ Write a function that:
 - Returns a new array containing the same elements, except sorted.
 */
 function sortArray(arr) {
-  return arr.map(array).sort();
+  const arrSorted = arr.slice();
+   return arrSorted.sort();
 }
 
 /*
@@ -37,7 +38,9 @@ Write a function that:
 */
 
 function remove(arr, index) {
-
+  const beforeIndex = arr.slice(0, index);
+  const afterIndex = arr.slice(index + 1);
+  return beforeIndex.concat(afterIndex);
 }
 
 /*
@@ -49,7 +52,13 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-  return arr.map(num => Math.trunc(num*100)/100).map(num => num > 100 ? 100 : x).map(num => `${num}%`);
+return arr.map(num => {
+    if (num > 100){ 
+    return "100%";
+  } else 
+    return `${Math.trunc((num*100)/100)}%`;
+});
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
