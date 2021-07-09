@@ -22,7 +22,7 @@ function checkCodeIsThere(stringText) {
   //edit code below
 
   if (stringText.includes(magicWord)) {
-    return stringText.indexOg(magicWord);
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -126,9 +126,17 @@ function getLocationName(arrLocation) {
    - Use array method to remove locations that is not accessible by the given transportMode.
    - Use array method to manipulate its elements.
    
-  Advanced challange: try to use arrow function when invoking an array method.
+  Advanced challenge: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(arrLocation, strTransportMode) {
+
+  //   arrLocation.map(element => {
+  //   const location = getLocationName(element);
+  //   const transportModes = getTransportModes(element);
+  //   if(isAccessibleByTransportMode(transportModes, transportModes)){
+  //     return location;
+  //   }
+  // });
 
   // Implement the function body
 }
