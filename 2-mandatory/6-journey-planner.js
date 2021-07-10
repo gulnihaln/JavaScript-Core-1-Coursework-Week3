@@ -97,8 +97,8 @@ function isAccessibleByTransportMode(arrTransportModes, strTransportMode) {
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName(arrLocation) {
-  return arrLocation[0];
+function getLocationName(arrTransportModes) {
+  return arrTransportModes[0];
 }
 
 /*
@@ -128,16 +128,31 @@ function getLocationName(arrLocation) {
    
   Advanced challenge: try to use arrow function when invoking an array method.
 */
-function journeyPlanner(arrLocation, strTransportMode) {
+function journeyPlanner(arrTransportModes, strTransportMode) {
+  const locations = arrTransportModes.map(element => {
+  const transports = getTransportModes(element);
+  if (isAccessibleByTransportMode(transports, strTransportMode)){
+    return getLocationName(element);  
+  }
 
-  //   arrLocation.map(element => {
-  //   const location = getLocationName(element);
-  //   const transportModes = getTransportModes(element);
-  //   if(isAccessibleByTransportMode(transportModes, transportModes)){
-  //     return location;
+  });
+  
+  return locations.filter(element => {
+    return element !== undefined;
+    
+    // if (element === undefined){
+    //   return false;
+    // } else {
+    //   return true;
+    // }
+
+  //   if (element !== undefined) {
+  //     return true;
+  //   } else {
+  //     return false;
   //   }
-  // });
 
+   });
   // Implement the function body
 }
 
