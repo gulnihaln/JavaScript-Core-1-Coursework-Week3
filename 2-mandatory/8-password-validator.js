@@ -25,12 +25,13 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
-  const getNewPassword = passwords.map(element => {
+  const getNewPassword = passwords.map((element, index) => {
     return (containsLowercaseLetter(element) &&
            containsUppercaseLetter(element) &&
            containsNumber(element) &&
            containsSymbol(element) &&
-           element.length >=5 );
+           passwords.indexOf(element) === index &&
+           element.length >= 5 );
   });
   return getNewPassword;
 }
